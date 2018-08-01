@@ -1,11 +1,13 @@
-varA=int(input("enter a"))
-varB=int(input("enter b"))
+varA="hello"
+varB=10
 if type(varA)==str or type(varB)==str:
     print("string involved")
-elif int(varA)>int(varB):
+    
+elif varA>varB:
     print("bigger")
 elif varA==varB:
     print("equal")
-elif varA<varB:
+else :
     print("smaller")
+
 
