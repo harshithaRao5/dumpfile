@@ -1,5 +1,5 @@
 "'#taking the input string'"
-S = input("enter the string")
+S = input()
 COUNT = 0
 "'#checking the range of the strings'"
 for vowel in S:
