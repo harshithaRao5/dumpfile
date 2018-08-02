@@ -6,4 +6,4 @@ for vowel in S:
     if vowel in 'aeiou':
         COUNT = COUNT+1
 
-print("number of vowels:", COUNT)
+print(COUNT)
