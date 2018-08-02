@@ -5,7 +5,10 @@
 #Number of vowels: 5
 
 def main():
-	#your code here
+	s = raw_input()
+	# the input string is in s
+	# remove pass and start your code here
+	pass
 
 if __name__== "__main__":
 	main()
