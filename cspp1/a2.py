@@ -1,6 +1,15 @@
-def main():
-    data = input()
-    print(int(data[0])+int(data[1]))
+x = 23
+epsilon = 0.01
+step = 0.1
+guess = 0.0
 
-if __name__ == "__main__":
-    main()
+while abs(guess**2-x) >= epsilon:
+    if guess <= x:
+        guess += step
+    else:
+        break
+
+if abs(guess**2 - x) >= epsilon:
+    print('failed')
+else:
+    print('succeeded: ' + str(guess))
