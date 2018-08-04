@@ -1,9 +1,6 @@
-s=input()
-l=len(s)
-z='!@#$%^&*'
-for z in range(l):
-    if z=='!@#$%^&*':
-        print(z="0")
-print(s)
-
-   
+S = input()
+for i in S:
+	if i in '!@#$%^&*':
+        print(" ")
+else:
+	print(i)
