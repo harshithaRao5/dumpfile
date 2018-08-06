@@ -30,7 +30,7 @@ def payingDebtOffInAYear(balance, annualInterestRate, monthlyPaymentRate):
 		Minimum_monthly_payment = monthlyPaymentRate * updated_balance
 		Monthly_unpaid_balance = updated_balance - Minimum_monthly_payment
 		updated_balance = Monthly_unpaid_balance + ( Monthly_interest_rate * Monthly_unpaid_balance )
-		print(i, round(updated_balance, 2))
+	print(round(updated_balance, 2))
 def main():
 	data = input()
 	data = data.split(' ')
