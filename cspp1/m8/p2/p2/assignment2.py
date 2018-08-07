@@ -5,19 +5,13 @@
 
 
 def sumofdigits(n):
-    '''
-    n is positive Integer
-
-    returns: a positive integer, the sum of digits of n.
-    '''
-    # Your code here
-    pass
-
-
+    if (n == 0):
+       return 0
+    return (n % 10 + sumofdigits(n // 10));
+    
 def main():
     a = input()
     print(sumofdigits(int(a)))  
 
 if __name__== "__main__":
     main()
-
