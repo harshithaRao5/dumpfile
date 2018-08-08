@@ -6,7 +6,7 @@
 
 def gcdRecur(a, b):
     if b == 0:
-        return a
+        return 
     else:
         return gcdRecur(b, a%b)
 def main():
