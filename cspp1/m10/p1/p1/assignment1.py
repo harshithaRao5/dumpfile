@@ -6,18 +6,18 @@ that is comprised of lowercase English letters - all lowercase English letters
 that are not in letters_guessed
 '''
 import string
-aDict = string.ascii_lowercase
+DICTIONARY = string.ascii_lowercase
 def get_available_letters(letters_guessed):
     '''
     :param letters_guessed: list, what letters have been guessed so far
     returns: string, comprised of letters that represents what letters have not
       yet been guessed.
     '''
-    S=''
-    for char in aDict:
+    str_1 = ''
+    for char in DICTIONARY:
         if char not in letters_guessed:
-            S = S + char
-    return S
+            str_1 = str_1 + char
+    return str_1
 
 
 
