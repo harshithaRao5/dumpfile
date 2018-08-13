@@ -12,9 +12,10 @@ def main():
     data = input()
     data = data.split(' ')
     data = list(map(float, data))
-    # print(data)
+    #print(list(map(float, data)))
     for x in range(len(data)):
         temp = str(data[x]).split('.')
+        print(temp)
         if(temp[1] == '0'):
             data[x] = int(float(str(data[x])))
         else:

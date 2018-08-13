@@ -1,11 +1,6 @@
-'''
-#Exercise : Assignment-2
-implement the function hangman, which takes one parameter - the secretWord 
-the user is to guess. This starts up an interactive game of Hangman between 
-the user and the computer. Be sure you take advantage of the three helper functions, 
-isWordGuessed, getGuessedWord, and getAvailableLetters, 
-that you've defined in the previous part.
-'''
+# Hangman game
+#
+
 # -----------------------------------
 # Helper code
 # You don't need to understand this helper code,
@@ -156,18 +151,15 @@ def hangman(secret_word):
         print("Congratulations, you won!") 
     elif mistakes_made == 0:
         print (("Sorry, you ran out of guesses. The word was ") + secret_word)
-def main():
-    '''
-    Main function for the given program
-    
-    When you've completed your hangman function, uncomment these two lines
-    and run this file to test! (hint: you might want to pick your own
-    secretWord while you're testing)
-    '''
-    secret_word = choose_word(word_list).lower()
-    hangman(secret_word)
 
 
-if __name__ == "__main__":
-    main()
 
+
+
+
+# When you've completed your hangman function, uncomment these two lines
+# and run this file to test! (hint: you might want to pick your own
+# secretWord while you're testing)
+
+    secretWord = chooseWord(wordlist).lower()
+    hangman(secretWsord)

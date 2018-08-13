@@ -12,7 +12,6 @@ def how_many(aDict):
     for i in aDict:
         value = aDict[i]
         j=len(value)
-        print(j)
         count += j
     return count
 def main():
