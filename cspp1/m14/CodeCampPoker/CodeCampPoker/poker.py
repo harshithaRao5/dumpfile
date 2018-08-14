@@ -28,7 +28,7 @@ def is_straight(hand):
     	elif I[0] == 'A':
     		num_.append(14)
     	else:
-    		num_.append(int(i[0]))
+    		num_.append(int(I[0]))
     value_ = sorted(num_)
     for I in range(len(value_)-1):
     	if value_[I+1] == 1 + value_[I]:
