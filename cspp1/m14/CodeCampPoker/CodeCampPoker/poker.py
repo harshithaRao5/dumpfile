@@ -14,26 +14,26 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    num=[]
-    count=0
-    for i in hand:
-    	if i[0]=='T':
-    		num.append(10)
-    	elif i[0]=='J':
-    		num.append(11)
-    	elif i[0]=='Q':
-    		num.append(12)
-    	elif i[0]=='K':
-    		num.append(13)
-    	elif i[0]=='A':
-    		num.append(14)
+    num_ = []
+    count_ = 0
+    for I in hand:
+    	if I[0] == 'T':
+    		num_.append(10)
+    	elif I[0] == 'J':
+    		num_.append(11)
+    	elif I[0] == 'Q':
+    		num_.append(12)
+    	elif I[0] == 'K':
+    		num_.append(13)
+    	elif I[0] == 'A':
+    		num_.append(14)
     	else:
-    		num.append(int(i[0]))
-    value = sorted(num)
-    for i in range(len(value)-1):
-    	if value[i+1] == 1 + value[i]:
-    		count += 1
-    if count == len(value)-1:
+    		num_.append(int(i[0]))
+    value_ = sorted(num_)
+    for I in range(len(value_)-1):
+    	if value_[I+1] == 1 + value_[I]:
+    		count_ += 1
+    if count_ == len(value_)- 1:
     	return True
     else:
     	return False
@@ -49,9 +49,9 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    suit=hand[0]
-    for h in hand:
-        if suit[1]!=h[1]:
+    suit_ = hand_[0]
+    for H in hand_:
+        if suit_[1] != H[1]:
             return False
     return True
     
