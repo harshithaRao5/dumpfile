@@ -41,7 +41,7 @@ def create_social_network(data):
         elif value not in data[key]:
             data[key].append(value)
     print(data[key,value])'''
-    data={}
+    '''data={}
     for i in range(lines):
         res=data.split("follows")
         if res[i] not in data:
@@ -49,7 +49,8 @@ def create_social_network(data):
         else:
             if res[i+1] not in data[res[0]]:
                 data[res[i]].append(data[res[i+1]])
-    print(data)
+    print(data)'''
+    
 
 
 
