@@ -4,10 +4,6 @@
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
 card_values = {'T':10,'J':11,'Q':12,'K':13,'A':14,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
-face_values=[]
-for h in hand:
-    face_values.append(card_values[h[0]])
-face_values.sort()
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -18,6 +14,10 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
+    face_values=[]
+    for h in hand:
+        face_values.append(card_values[h[0]])
+    face_values.sort()
     for i in range(0, len(face_values)-1):
         if face_values[i+1]-face_values[i]!=1:
             return False
@@ -40,24 +40,50 @@ def is_flush(hand):
     return True
 
 def four_of_a_kind(hand):
-    for i in range(0, len(face_values)-1):
-        if face_values[i] == face_values[i+1] == face_values[i+2] == face_values[i+3]:
+    face_value = []
+    for h in hand:
+        face_value.append(card_values[h[0]])
+    face_value.sort()
+    for i in range(0, len(face_value)-1):
+        if face_value[i] == face_value[i+1] == face_value[i+2] == face_value[i+3]:
             return True
     return False
 def three_of_a_kind(hand):
-    for i in range(0,len(face_values)-1):
-        if face_values[i] == face_values[i+1] == face_values[i+2]:
+    face = []
+    for h in hand:
+        face.append(card_values[h[0]])
+    face.sort()
+    for i in range(0,len(face)-1):
+        if face[i] == face[i+1] == face[i+2]:
             return True
     return False
-'''def one_pair(hand):'''
-    
-
+def one_pair(hand):
+    face1 = []
+    for h in hand:
+        face1.append(card_values[h[0]])
+    face1.sort()
+    for i range(0,len(face1)-1):
+        if face1[i] == face1[i+1]:
+            return True
+    return False
 def full_house(hand):
-    for i in range(0, len(face_values)-1):
-        if face_values[i] == face_values[i+1] == face_values[i+2] and face_values[i+3] == face_values[i+4]:
+    face_value1 = []
+    for h in hand:
+        face_value1.append(card_values[h[0]])
+    face_value1.sort()
+    for i in range(0, len(face_value1)-1):
+        if face_value1[i] == face_value1[i+1] == face_value1[i+2] and face_value1[i+3] == face_value1[i+4]:
             return True
     return False
-
+def two_pair(hand):
+    face_value2 = []
+    for h in hand:
+        face_value2.append(card_values[h[0]])
+    face_value2.sort()
+    for i in range(0, len(face_value2)-1):
+        if face_value2[i] == face_value2[i+1] and face_value2[i+2] == face_value2[i+3]:
+            return True
+    return False
 
 
 def hand_rank(hand):
@@ -85,12 +111,16 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
-        return 6
+        return 8
     if four_of_a_kind(hand):
-        return 5
+        return 7
     if three_of_a_kind(hand):
-        return 4
+        return 6
+    if one_pair(hand):
+        return 5
     if full_house(hand):
+        return 4
+    if two_pair(hand):
         return 3
     elif is_flush(hand):
         return 2
