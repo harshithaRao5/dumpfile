@@ -113,13 +113,13 @@ def hand_rank(hand):
     if is_straight(hand) and is_flush(hand):
         return 8
     if four_of_a_kind(hand):
-        return 7
+        return 6
     if three_of_a_kind(hand):
         return 3
     if one_pair(hand):
         return 1
     if full_house(hand):
-        return 6
+        return 7
     if two_pair(hand):
         return 2
     elif is_flush(hand):
@@ -128,7 +128,7 @@ def hand_rank(hand):
         return 4
     else:
         return 0
-        
+
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
