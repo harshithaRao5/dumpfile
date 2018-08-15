@@ -3,7 +3,7 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-card_values = {'T':10,'J':11,'Q':12,'K':13,'A':14,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
+card_values = {'T':10, 'J':11, 'Q':12, 'K':13, 'A':14, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -14,12 +14,12 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    face_values=[]
+    face_values = []
     for h in hand:
         face_values.append(card_values[h[0]])
     face_values.sort()
     for i in range(0, len(face_values)-1):
-        if face_values[i+1]-face_values[i]!=1:
+        if face_values[i+1] - face_values[i] != 1:
             return False
     return True
 
@@ -33,9 +33,9 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    suit=hand[0]
+    suit = hand[0]
     for h in hand:
-        if suit[1]!=h[1]:
+        if suit[1] != h[1]:
             return False
     return True
 
@@ -147,7 +147,7 @@ def poker(hands):
     # hand_rank is a function passed to max
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
-    return max(hands, key=hand_rank)
+    return max(hands, key = hand_rank)
 
 if __name__ == "__main__":
     # read the number of test cases
