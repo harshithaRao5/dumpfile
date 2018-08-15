@@ -15,8 +15,8 @@ def is_straight(hand):
         Write the code for it and return True if it is a straight else return False
     '''
     face_values = []
-    for h in hand:
-        face_values.append(card_values[h[0]])
+    for h_ in hand:
+        face_values.append(card_values[h_[0]])
     face_values.sort()
     for i in range(0, len(face_values)-1):
         if face_values[i+1] - face_values[i] != 1:
@@ -34,15 +34,15 @@ def is_flush(hand):
         Write the code for it and return True if it is a flush else return False
     '''
     suit = hand[0]
-    for h in hand:
-        if suit[1] != h[1]:
+    for h_ in hand:
+        if suit[1] != h_[1]:
             return False
     return True
 
 def four_of_a_kind(hand):
     face_value = []
-    for h in hand:
-        face_value.append(card_values[h[0]])
+    for h_ in hand:
+        face_value.append(card_values[h_[0]])
     face_value.sort()
     for i in range(0, len(face_value)-3):
         if face_value[i] == face_value[i+1] == face_value[i+2] == face_value[i+3]:
@@ -50,8 +50,8 @@ def four_of_a_kind(hand):
     return False
 def three_of_a_kind(hand):
     face = []
-    for h in hand:
-        face.append(card_values[h[0]])
+    for h_ in hand:
+        face.append(card_values[h_[0]])
     face.sort()
     for i in range(0,len(face)-2):
         if face[i] == face[i+1] == face[i+2]:
@@ -59,8 +59,8 @@ def three_of_a_kind(hand):
     return False
 def one_pair(hand):
     face1 = []
-    for h in hand:
-        face1.append(card_values[h[0]])
+    for h_ in hand:
+        face1.append(card_values[h_[0]])
     face1.sort()
     for i in range(0,len(face1)-1):
         if face1[i] == face1[i+1]:
@@ -77,8 +77,8 @@ def one_pair(hand):
     return False'''
 def two_pair(hand):
     face_value2 = []
-    for h in hand:
-        face_value2.append(card_values[h[0]])
+    for h_ in hand:
+        face_value2.append(card_values[h_[0]])
     face_value2.sort()
     for i in range(0, len(face_value2)-1):
         if face_value2[i] == face_value2[i+1] and face_value2[i+2] == face_value2[i+3]:
