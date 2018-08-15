@@ -62,7 +62,7 @@ def one_pair(hand):
     for h in hand:
         face1.append(card_values[h[0]])
     face1.sort()
-    for i range(0,len(face1)-1):
+    for i in range(0,len(face1)-1):
         if face1[i] == face1[i+1]:
             return True
     return False
