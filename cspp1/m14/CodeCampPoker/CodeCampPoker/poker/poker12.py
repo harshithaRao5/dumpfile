@@ -47,7 +47,15 @@ def four_of_a_kind(hand):
         if face_value[i] == face_value[i+1] == face_value[i+2] == face_value[i+3]:
             return True
     return False
-
+def full_house(hand):
+    face_value1 = []
+    for h in hand:
+        face_value1.append(card_values[h[0]])
+    face_value1.sort()
+    for i in range(0, len(face_value1)-1):
+        if face_value1[i] == face_value1[i+1] == face_value1[i+2] and face_value1[i+3] == face_value1[i+4]:
+                return True
+    return False
 
 
 
@@ -76,8 +84,10 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
-        return 4
+        return 5
     if four_of_a_kind(hand):
+        return 4
+    if full_house(hand):
         return 3
     elif is_flush(hand):
         return 2
