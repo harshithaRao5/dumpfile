@@ -3,6 +3,7 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
+card_values = {'T':10,'J':11,'Q':12,'K':13,'A':14,'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9}
 def is_straight(hand):
     '''
         How do we find out if the given hand is a straight?
@@ -13,29 +14,16 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    num_ = []
-    count_ = 0
-    for i in hand:
-        if i[0] == 'T':
-            num_.append(10)
-        elif i[0] == 'J':
-            num_.append(11)
-        elif i[0] == 'Q':
-            num_.append(12)
-        elif i[0] == 'K':
-            num_.append(13)
-        elif i[0] == 'A':
-            num_.append(14)
-        else:
-            num_.append(int(i[0]))
-    value = sorted(num_)
-    for i in range(len(value)-1):
-        if value[i+1] == 1 + value[i]:
-            count_ += 1
-    if count_ == len(value)-1:
-        return True
-    else:
-        return False
+    face_values=[]
+    for h in hand:
+        face_values.append(card_values[h[0]])
+    face_values.sort()
+    for i in range(0, len(face_values)-1):
+        if face_values[i+1]-face_values[i]!=1:
+            return False
+    return True
+
+
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -45,11 +33,24 @@ def is_flush(hand):
         Think of an algorithm: given the card suite how to check if it is a flush
         Write the code for it and return True if it is a flush else return False
     '''
-    suit = hand[0]
+    suit=hand[0]
     for h in hand:
-        if suit[1] != h[1]:
+        if suit[1]!=h[1]:
             return False
     return True
+def four_of_a_kind(hand):
+    face_value = []
+    for h in hand:
+        face_value.append(card_values[h[0]])
+    face_value.sort()
+    for i in range(0, len(face_value)-1):
+        if face_value[i] == face_value[i+1] == face_value[i+2] == face_value[i+3]:
+            return True
+    return False
+
+
+
+
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -58,6 +59,7 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
+
     # By now you should have seen the way a card is represented.
     # If you haven't then go the main or poker function and print the hands
     # Each card is coded as a 2 character string. Example Kind of Hearts is KH
@@ -66,6 +68,7 @@ def hand_rank(hand):
     # What would be the logic to determine if a hand is a straight or flush?
     # Let's not think about the logic in the hand_rank function
     # Instead break it down into two sub functions is_straight and is_flush
+
     # check for straight, flush and straight flush
     # best hand of these 3 would be a straight flush with the return value 3
     # the second best would be a flush with the return value 2
@@ -73,6 +76,8 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
+        return 4
+    if four_of_a_kind(hand):
         return 3
     elif is_flush(hand):
         return 2
@@ -80,6 +85,7 @@ def hand_rank(hand):
         return 1
     else:
         return 0
+
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
@@ -90,6 +96,7 @@ def poker(hands):
 
         Output: Return the winning poker hand
     '''
+
     # the line below may be new to you
     # max function is provided by python library
     # learn how it works, in particular the key argument, from the link
@@ -98,6 +105,7 @@ def poker(hands):
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
     return max(hands, key=hand_rank)
+
 if __name__ == "__main__":
     # read the number of test cases
     COUNT = int(input())
