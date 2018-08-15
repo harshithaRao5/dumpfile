@@ -71,7 +71,7 @@ def full_house(hand):
     for h in hand:
         face_value1.append(card_values[h[0]])
     face_value1.sort()
-    for i in range(0, len(face_value1)-1):
+    for i in range(0, len(face_value1)):
         if face_value1[i] == face_value1[i+1] == face_value1[i+2] and face_value1[i+3] == face_value1[i+4]:
             return True
     return False
@@ -80,7 +80,7 @@ def two_pair(hand):
     for h in hand:
         face_value2.append(card_values[h[0]])
     face_value2.sort()
-    for i in range(0, len(face_value2)-1):
+    for i in range(0, len(face_value2)):
         if face_value2[i] == face_value2[i+1] and face_value2[i+2] == face_value2[i+3]:
             return True
     return False
