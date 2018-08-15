@@ -39,15 +39,6 @@ def is_flush(hand):
             return False
     return True
 
-def four_of_a_kind(hand):
-    face_value = []
-    for h in hand:
-        face_value.append(card_values[h[0]])
-    face_value.sort()
-    for i in range(0, len(face_value)-1):
-        if face_value[i] == face_value[i+1] == face_value[i+2] == face_value[i+3]:
-            return True
-    return False
 def three_of_a_kind(hand):
     face = []
     for h in hand:
@@ -84,6 +75,15 @@ def two_pair(hand):
         if face_value2[i] == face_value2[i+1] and face_value2[i+2] == face_value2[i+3]:
             return True
     return False
+def four_of_a_kind(hand):
+    face_value = []
+    for h in hand:
+        face_value.append(card_values[h[0]])
+    face_value.sort()
+    for i in range(0, len(face_value)-1):
+        if face_value[i] == face_value[i+1] == face_value[i+2] == face_value[i+3]:
+            return True
+    return False
 
 
 def hand_rank(hand):
@@ -113,13 +113,13 @@ def hand_rank(hand):
     if is_straight(hand) and is_flush(hand):
         return 8
     if four_of_a_kind(hand):
-        return 6
+        return 7
     if three_of_a_kind(hand):
         return 3
     if one_pair(hand):
         return 1
     if full_house(hand):
-        return 7
+        return 6
     if two_pair(hand):
         return 2
     elif is_flush(hand):
