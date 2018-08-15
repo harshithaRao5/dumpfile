@@ -53,7 +53,7 @@ def three_of_a_kind(hand):
     for h in hand:
         face.append(card_values[h[0]])
     face.sort()
-    for i in range(0,len(face)-1):
+    for i in range(0,len(face)-2):
         if face[i] == face[i+1] == face[i+2]:
             return True
     return False
