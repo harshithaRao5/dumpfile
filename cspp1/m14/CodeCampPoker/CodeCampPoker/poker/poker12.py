@@ -14,10 +14,6 @@ def is_straight(hand):
         Think of an algorithm: given the card face value how to check if it a straight
         Write the code for it and return True if it is a straight else return False
     '''
-    face_values=[]
-    for h in hand:
-        face_values.append(card_values[h[0]])
-    face_values.sort()
     for i in range(0, len(face_values)-1):
         if face_values[i+1]-face_values[i]!=1:
             return False
@@ -40,48 +36,48 @@ def is_flush(hand):
     return True
 
 def three_of_a_kind(hand):
-    face = []
+    '''face = []
     for h in hand:
         face.append(card_values[h[0]])
-    face.sort()
-    for i in range(0,len(face)-1):
-        if face[i] == face[i+1] == face[i+2]:
+    face.sort()'''
+    for i in range(0,len(face_values)-1):
+        if face_values[i] == face_values[i+1] == face_values[i+2]:
             return True
     return False
 def one_pair(hand):
-    face1 = []
+    '''face1 = []
     for h in hand:
         face1.append(card_values[h[0]])
-    face1.sort()
-    for i in range(0,len(face1)-1):
-        if face1[i] == face1[i+1]:
+    face1.sort()'''
+    for i in range(0,len(face_values)-1):
+        if face_values[i] == face_values[i+1]:
             return True
     return False
 def full_house(hand):
-    face_value1 = []
+    '''face_value1 = []
     for h in hand:
         face_value1.append(card_values[h[0]])
-    face_value1.sort()
-    for i in range(0, len(face_value1)-1):
-        if face_value1[i] == face_value1[i+1] == face_value1[i+2] and face_value1[i+3] == face_value1[i+4]:
+    face_value1.sort()'''
+    for i in range(0, len(face_values)-1):
+        if face_values[i] == face_values[i+1] == face_values[i+2] and face_values[i+3] == face_values[i+4]:
             return True
     return False
 def two_pair(hand):
-    face_value2 = []
+    '''face_value2 = []
     for h in hand:
         face_value2.append(card_values[h[0]])
-    face_value2.sort()
-    for i in range(0, len(face_value2)-1):
-        if face_value2[i] == face_value2[i+1] and face_value2[i+2] == face_value2[i+3]:
+    face_value2.sort()'''
+    for i in range(0, len(face_values)-1):
+        if face_values[i] == face_values[i+1] and face_values[i+2] == face_values[i+3]:
             return True
     return False
 def four_of_a_kind(hand):
-    face_value = []
+    '''face_value = []
     for h in hand:
         face_value.append(card_values[h[0]])
-    face_value.sort()
-    for i in range(0, len(face_value)-1):
-        if face_value[i] == face_value[i+1] == face_value[i+2] == face_value[i+3]:
+    face_value.sort()'''
+    for i in range(0, len(face_values)-1):
+        if face_values[i] == face_values[i+1] == face_values[i+2] == face_values[i+3]:
             return True
     return False
 
@@ -160,4 +156,8 @@ if __name__ == "__main__":
         HANDS.append(ha)
     # test the poker function to see how it works
     print(' '.join(poker(HANDS)))
+    face_values=[]
+    for h in hand:
+        face_values.append(card_values[h[0]])
+    face_values.sort()
     
