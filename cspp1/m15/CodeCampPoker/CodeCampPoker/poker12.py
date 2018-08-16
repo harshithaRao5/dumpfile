@@ -82,29 +82,21 @@ def two_pair(hand):
             return True
     return False
 def high_card(hand):
-    '''face_value3 = []
+    face_value3 = []
+    list1=[]
     for H in hand:
         face_value3.append(card_values[H[0]])
-    for i in range(0, len(face_value3)-1):
+        list1=list(face_value3)
+    if face_value_3 == max(list1):
+        return True
+    return False
+
+
+    
+    '''for i in range(0, len(face_value3)-1):
         if face_value3[i] == 14 or face_value3[i] == 13 or face_value3[i] == 12 or face_value3[i] == 11 or face_value3[i] == 10:
             return True
     return False'''
-    num_ = []
-    for i in hand:
-        if i[0] == 'T':
-            num_.append(int(10))
-        elif i[0] == 'J':
-            num_.append(int(11))
-        elif i[0] == 'Q':
-            num_.append(int(12))
-        elif i[0] == 'K':
-            num_.append(int(13))
-        elif i[0] == 'A':
-            num_.append(int(14))
-        else:
-            num_.append(int(i[0]))
-    return max(num_)
-    
     
 def hand_rank(hand):
     '''
