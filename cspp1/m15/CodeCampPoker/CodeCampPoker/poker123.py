@@ -53,7 +53,7 @@ def two_pair(ranks):
     two=kind(sorted(ranks),2)
     if one and two:
         return (one,two)
-    return none
+    return None
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
