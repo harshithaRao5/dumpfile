@@ -87,6 +87,7 @@ def high_card(hand):
     for H in hand:
         face_value3.append(card_values[H[0]])
         list1=list(face_value3)
+    face_value_3 = max(list1)
     if face_value_3 == max(list1):
         return True
     return False
