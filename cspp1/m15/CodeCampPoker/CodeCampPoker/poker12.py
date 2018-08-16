@@ -87,13 +87,7 @@ def high_card(hand):
     for H in hand:
         face_value3.append(card_values[H[0]])
         list1=list(face_value3)
-    face_value_3 = max(list1)
-    if face_value_3 == max(list1):
-        return True
-    return False
-
-
-    
+    lis1 = max(list1)    
     '''for i in range(0, len(face_value3)-1):
         if face_value3[i] == 14 or face_value3[i] == 13 or face_value3[i] == 12 or face_value3[i] == 11 or face_value3[i] == 10:
             return True
@@ -138,7 +132,7 @@ def hand_rank(hand):
     elif is_straight(hand):
         return 5
     elif high_card(hand):
-        return 1
+        return lis1
     else:
         return 0
 def poker(hands):
