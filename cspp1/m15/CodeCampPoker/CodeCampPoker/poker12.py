@@ -81,6 +81,14 @@ def two_pair(hand):
         if face_value2[i] == face_value2[i+1] and face_value2[i+2] == face_value2[i+3]:
             return True
     return False
+def high_card(hand):
+    face_value3 = []
+    for H in hand:
+        face_value3.append(card_values[H[0]])
+    for i in range(0, len(face_value3)-1):
+        if face_value3[i] == 14 or face_value3[i] == 13 or face_value3[i] == 12 or face_value3[i] == 11 or face_value3[i] == 10:
+            return True
+    return False
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -104,21 +112,23 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand) and is_flush(hand):
-        return 8
+        return 9
     if four_of_a_kind(hand):
-        return 7
+        return 8
     if three_of_a_kind(hand):
-        return 3
-    if one_pair(hand):
-        return 1
-    if three_of_a_kind(hand) and one_pair(hand):
-        return 6
-    if two_pair(hand):
-        return 2
-    elif is_flush(hand):
-        return 5
-    elif is_straight(hand):
         return 4
+    if one_pair(hand):
+        return 2
+    if three_of_a_kind(hand) and one_pair(hand):
+        return 7
+    if two_pair(hand):
+        return 3
+    elif is_flush(hand):
+        return 6
+    elif is_straight(hand):
+        return 5
+    elif high_card(hand):
+        return 1
     else:
         return 0
 def poker(hands):
