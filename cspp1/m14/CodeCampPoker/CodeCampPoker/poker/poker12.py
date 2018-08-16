@@ -22,8 +22,6 @@ def is_straight(hand):
         if face_values[i+1] - face_values[i] != 1:
             return False
     return True
-
-
 def is_flush(hand):
     '''
         How do we find out if the given hand is a flush?
@@ -38,7 +36,6 @@ def is_flush(hand):
         if suit[1] != H[1]:
             return False
     return True
-
 def four_of_a_kind(hand):
     face_value = []
     for H in hand:
@@ -84,8 +81,6 @@ def two_pair(hand):
         if face_value2[i] == face_value2[i+1] and face_value2[i+2] == face_value2[i+3]:
             return True
     return False
-
-
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
@@ -94,7 +89,6 @@ def hand_rank(hand):
         The first version should identify if the given hand is a straight
         or a flush or a straight flush.
     '''
-
     # By now you should have seen the way a card is represented.
     # If you haven't then go the main or poker function and print the hands
     # Each card is coded as a 2 character string. Example Kind of Hearts is KH
@@ -103,7 +97,6 @@ def hand_rank(hand):
     # What would be the logic to determine if a hand is a straight or flush?
     # Let's not think about the logic in the hand_rank function
     # Instead break it down into two sub functions is_straight and is_flush
-
     # check for straight, flush and straight flush
     # best hand of these 3 would be a straight flush with the return value 3
     # the second best would be a flush with the return value 2
@@ -128,18 +121,15 @@ def hand_rank(hand):
         return 4
     else:
         return 0
-
 def poker(hands):
     '''
         This function is completed for you. Read it to learn the code.
-
         Input: List of 2 or more poker hands
                Each poker hand is represented as a list
                Print the hands to see the hand representation
 
         Output: Return the winning poker hand
     '''
-
     # the line below may be new to you
     # max function is provided by python library
     # learn how it works, in particular the key argument, from the link
@@ -148,7 +138,6 @@ def poker(hands):
     # hand_rank takes a hand and returns its rank
     # max uses the rank returned by hand_rank and returns the best hand
     return max(hands, key = hand_rank)
-
 if __name__ == "__main__":
     # read the number of test cases
     COUNT = int(input())

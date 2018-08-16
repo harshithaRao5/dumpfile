@@ -50,6 +50,7 @@ def is_flush(hand):
         if suit[1] != h[1]:
             return False
     return True
+    -
 def hand_rank(hand):
     '''
         You will code this function. The goal of the function is to
