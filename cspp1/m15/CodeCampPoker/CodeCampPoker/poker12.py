@@ -83,10 +83,11 @@ def two_pair(hand):
     return False
 def high_card(hand):
     face_value3 = []
+    list1=[14,13,12,11,10]
     for H in hand:
         face_value3.append(card_values[H[0]])
     for i in range(0, len(face_value3)-1):
-        if face_value3[i] == 14 or face_value3[i] == 13 or face_value3[i] == 12 or face_value3[i] == 11 or face_value3[i] == 10:
+        if face_value3[i] in list1:
             return True
     return False
 def hand_rank(hand):
