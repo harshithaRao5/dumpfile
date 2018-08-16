@@ -92,15 +92,15 @@ def high_card(hand):
     num_ = []
     for i in hand:
         if i[0] == 'T':
-            num_.append(10)
+            num_.append(int(10))
         elif i[0] == 'J':
-            num_.append(11)
+            num_.append(int(11))
         elif i[0] == 'Q':
-            num_.append(12)
+            num_.append(int(12))
         elif i[0] == 'K':
-            num_.append(13)
+            num_.append(int(13))
         elif i[0] == 'A':
-            num_.append(14)
+            num_.append(int(14))
         else:
             num_.append(int(i[0]))
     return max(num_)
