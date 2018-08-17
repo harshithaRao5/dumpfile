@@ -6,7 +6,7 @@ def similarity(dict1, dict2):
     '''
         Compute the document distance as given in the PDF
     '''
-   '''for i in dict1:
+    '''for i in dict1:
         if i not in '!@#$%^&*()':
             list1 = i +  list1'''
     word_list1 = dict1.split()
