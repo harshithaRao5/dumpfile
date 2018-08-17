@@ -10,11 +10,13 @@ def similarity(dict1, dict2):
     word_list1 = ''
     word_list2 = ''
     for i in dict1:
-        if i not in ',.=!@#$%^&?*()_+-1234567890':
-            word_list1 = word_list1 + i
+        for j in i:
+            if j not in ',.=!@#$%^&?*()_+-1234567890':
+                word_list1 = word_list1 + j
     for i in dict2:
-        if i not in ',.=!@#$%^&*?()_+-1234567890':
-            word_list2 = word_list2 + i
+        for j in i:
+            if j not in ',.=!@#$%^&*?()_+-1234567890':
+                word_list2 = word_list2 + j
     word_list1 = dict1.split()
     word_list2 = dict2.split()
     word_list3 = word_list1 + word_list2
