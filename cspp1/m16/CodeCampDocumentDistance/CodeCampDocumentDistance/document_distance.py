@@ -15,7 +15,7 @@ def similarity(dict1, dict2):
     word_list3 = word_list1 + word_list2
     dict3={}
     for word in word_list3:
-        if word not in load_stopwords(file_name).keys() and '!@#$%^&*()_-+' and "'" :
+        if word not in load_stopwords(file_name).keys() and '!@#$%^&*()_-+':
             dict3[word] = (word_list1.count(word),word_list2.count(word))
     numerator = 0
     denominator = 0
