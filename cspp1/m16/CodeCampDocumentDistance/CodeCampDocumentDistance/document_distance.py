@@ -19,12 +19,14 @@ def similarity(dict1, dict2):
             dict3[word] = (word_list1.count(word),word_list2.count(word))
     numerator = 0
     denominator = 0
+    sum_1 = 0
+    sum_2 = 0
     for i in dict3:
         numerator = numerator + dict3[i][0]*dict3[i][1]
-        sum1 = dict3[i][0]^2
-        sum2 = dict3[i][1]^2
+        sum_1 = dict3[i][0]^2
+        sum_2 = dict3[i][1]^2
         denominator = math.sqrt(sum1)*math.sqrt(sum2)
-    return numerator/denominator
+    return (numerator/denominator)
 
 def load_stopwords(filename):
     '''
