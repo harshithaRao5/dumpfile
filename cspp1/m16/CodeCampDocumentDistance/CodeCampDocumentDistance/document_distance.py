@@ -19,8 +19,8 @@ def similarity(dict1, dict2):
             if j not in '!@#$%^&*()_+-=,.?1234567890':
                 if j not in "'":
                     word_list2 = word_list2 + j
-    word_list1 = dict1.split()
-    word_list2 = dict2.split()
+    word_list1 = word_list1.split()
+    word_list2 = word_list2.split()
     word_list3 = word_list1 + word_list2
     dict3={}
     for word in word_list3:
