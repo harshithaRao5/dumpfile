@@ -59,18 +59,15 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    clean_input = word_list(docs)
+    inp_1 = word_list(docs)
     adict={}
-    if docs.count('\n') > 1:
-        inp_1 = docs.split("\n")
-        inp_1 = inp_1[:len(inp_1)-1]
-        for words in clean_input:
-            if words not in load_stopwords(file_name).keys():
-                for (i, j) in enumerate(inp_1):
-                    if inp-1[i][0] not in adict:
-                        adict[inp_1[i][0]] = inp_1[i][1].count(word)
-                    else:
-                        adict[inp_1[i][0]].append(inp_1[i][1].count(word))
+    for words in docs:
+        if words not in load_stopwords(file_name).keys():
+            for i in enumerate(inp_1):
+                if inp_1(i) not in adict:
+                    adict[inp_1(i)] = inp_1(i+1).count(word)
+                else:
+                    adict[inp_1(i)].append(inp_1(i+1).count(word))
     return adict
 
 '''adict = {}
@@ -116,7 +113,7 @@ def main():
         i += 1
 
     # call print to display the search index
-    print_search_index(build_search_index(documents))
+    print(print_search_index(build_search_index(documents)))
     
 if __name__ == '__main__':
     main()
