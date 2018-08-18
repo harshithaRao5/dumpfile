@@ -44,7 +44,7 @@ def search(search_index, query):
     for word in input1:
         if word in search_index:
             count += 1
-    adict[word]=count
+        adict[word]=count
     return adict
 
 
