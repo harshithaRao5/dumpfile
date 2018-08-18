@@ -37,7 +37,7 @@ def search(search_index, query):
         collect all the values for the words that are in the search_index
         make a set of doc_id and return
     '''
-    query_1 = query[].split("\n")
+    query_1 = [query.split("\n")]
     query_1 = query_1.lower()
     count = 0
     for query_1 in search_index:
