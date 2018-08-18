@@ -39,10 +39,12 @@ def search(search_index, query):
     '''
     input1 = query
     #input1 = input1.lower()
+    count = 0
     adict = {}
     for word in input1:
         if word in search_index:
-            adict[word] = (input1.count(word))
+            count += 1
+    adict[word]=count
     return adict
 
 
