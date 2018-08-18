@@ -37,13 +37,13 @@ def search(search_index, query):
         collect all the values for the words that are in the search_index
         make a set of doc_id and return
     '''
-    search_index1 = search_index.split("\n")
-    search_index1 = search_index1.lower()
+    query_1 = query.lower()
     count = 0
-    for search_index1 in query:
-        if search_index1 in search_index:
+    for query_1 in search_index:
+        if query_1 in query:
             count += 1
     return count
+
      
 def process_queries(search_index, queries):
     '''
@@ -68,7 +68,7 @@ def main():
     # read the search queries into a list
     queries = []
     for i in range(lines):
-        queries.append(input())
+        queries.append(input().split("\n"))
         i += 1
 
     # call process queries

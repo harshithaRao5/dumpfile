@@ -22,7 +22,6 @@
 '''
 
 # helper function to load the stop words from a file
-file_name = "stopwords.txt"
 import re
 def load_stopwords(filename):
     '''
@@ -42,8 +41,10 @@ def word_list(text):
         return a list of words
     '''
     reg = re.compile('[^a-z]')
-    text = [reg.sub('',w.strip()) for w in text]
-    return text
+    w = [reg.sub("",w.strip()) for w in text.lower().split(" ")]
+    stop_words = load_stopwords("stopwords.txt")
+    w = [ i for i in w if i not in stop_words]
+    return w
 
 def build_search_index(docs):
     
@@ -59,7 +60,18 @@ def build_search_index(docs):
         # add or update the words of the doc to the search index
 
     # return search index
-    inp_1 = word_list(docs)
+    adict = {}
+    word_1 = []
+    for line in docs:
+        word_1.append(word_list(line))
+    for w in word_1:
+        for word in w:
+            if word not in adict.keys():
+                adict[word] = [(i, word.count(word))\
+                for i, word_ in enumerate(word_1) if word in word_]
+    return adict
+
+    '''inp_1 = word_list(docs)
     adict={}
     for words in docs:
         if words not in load_stopwords(file_name).keys():
@@ -68,23 +80,7 @@ def build_search_index(docs):
                     adict[inp_1(i)] = inp_1(i+1).count(word)
                 else:
                     adict[inp_1(i)].append(inp_1(i+1).count(word))
-    return adict
-
-'''adict = {}
-    if data.count('\n') > 1:
-        inp_1 = data.split("\n")
-        inp_1 = inp_1[:len(inp_1)-1]
-
-        for (i, j) in enumerate(inp_1):
-            inp_1[i] = j.split(" follows ")
-            # print(inp_1[i][0])
-            if inp_1[i][0] not in adict:
-                adict[inp_1[i][0]] = inp_1[i][1].split(',')
-            else:
-                adict[inp_1[i][0]].extend(inp_1[i][1].split(','))
-        return adict
     return adict'''
-
 
 
 
