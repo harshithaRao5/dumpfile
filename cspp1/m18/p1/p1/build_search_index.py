@@ -1,6 +1,5 @@
 '''
     Tiny Search Engine - Part 1 - Build a search index
-
     In this programming assingment you are given with some text documents as input.
     Complete the program below to build a search index. Don't worry, it is explained below.
     A search index is a python dictionary.
@@ -20,7 +19,6 @@
         .
     }
 '''
-
 # helper function to load the stop words from a file
 import re
 def load_stopwords(filename):
@@ -32,8 +30,6 @@ def load_stopwords(filename):
         for line in f_stopwords:
             stopwords[line.strip()] = 0
     return stopwords
-
-
 def word_list(text):
     '''
         Change case to lower and split the words using a SPACE
@@ -41,24 +37,18 @@ def word_list(text):
         return a list of words
     '''
     reg = re.compile('[^a-z]')
-    w_1 = [reg.sub("",w_1.strip()) for w_1 in text.lower().split(" ")]
+    w_1 = [reg.sub("", w_1.strip()) for w_1 in text.lower().split(" ")]
     stop_words = load_stopwords("stopwords.txt")
-    w_1 = [ i for i in w_1 if i not in stop_words]
+    w_1 = [i for i in w_1 if i not in stop_words]
     return w_1
-
 def build_search_index(docs):
-    
-
-    # initialize a search index (an empty dictionary)
-
+    '''returns the count value'''
+        # initialize a search index (an empty dictionary)
     # iterate through all the docs
     # keep track of doc_id which is the list index corresponding the document
     # hint: use enumerate to obtain the list index in the for loop
-
         # clean up doc and tokenize to words list
-
         # add or update the words of the doc to the search index
-
     # return search index
     adict = {}
     word_1 = []
@@ -70,20 +60,6 @@ def build_search_index(docs):
                 adict[word] = [(i_, word_new.count(word))\
                 for i_, word_new in enumerate(word_1) if word in word_new]
     return adict
-
-    '''inp_1 = word_list(docs)
-    adict={}
-    for words in docs:
-        if words not in load_stopwords(file_name).keys():
-            for i in enumerate(inp_1):
-                if inp_1(i) not in adict:
-                    adict[inp_1(i)] = inp_1(i+1).count(word)
-                else:
-                    adict[inp_1(i)].append(inp_1(i+1).count(word))
-    return adict'''
-
-
-
 # helper function to print the search index
 # use this to verify how the search index looks
 def print_search_index(index):
@@ -93,7 +69,6 @@ def print_search_index(index):
     keys = sorted(index.keys())
     for key in keys:
         print(key, " - ", index[key])
-
 # main function that loads the docs from files
 def main():
     '''
@@ -107,9 +82,7 @@ def main():
     for i in range(lines):
         documents.append(input())
         i += 1
-
     # call print to display the search index
     print_search_index(build_search_index(documents))
-    
 if __name__ == '__main__':
     main()
