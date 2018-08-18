@@ -37,19 +37,14 @@ def search(search_index, query):
         collect all the values for the words that are in the search_index
         make a set of doc_id and return
     '''
-    input1 = query.split("\n")
-    #input1 = input1.lower()
+    query_1 = query.split("\n")
+    query_1 = query_1.lower()
     count = 0
-    adict = {}
-    for word in input1:
-        if word in search_index:
+    for query_1 in search_index:
+        if query_1 in query:
             count += 1
-        adict[word]=count
-    return adict
-
-
-
-
+    return count
+     
 def process_queries(search_index, queries):
     '''
         function to process the search queries
