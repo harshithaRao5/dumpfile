@@ -37,7 +37,7 @@ def search(search_index, query):
         collect all the values for the words that are in the search_index
         make a set of doc_id and return
     '''
-    input1 = query.split()
+    input1 = query.split('')
     input1 = input1.lower()
     adict = {}
     for word in input1:
