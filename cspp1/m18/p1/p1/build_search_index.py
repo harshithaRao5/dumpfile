@@ -42,7 +42,7 @@ def word_list(text):
         return a list of words
     '''
     reg = re.compile('[^a-z]')
-    text = [reg.sub('',w.strip()) for w in text.split()]
+    text = [reg.sub('',w.strip()) for w in text]
     return text
 
 def build_search_index(docs):
