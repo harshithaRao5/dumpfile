@@ -119,6 +119,7 @@ def hangman(secret_word):
     '''
     intro = str(len(secret_word))
     letters_guessed = []
+
     guess = str
     mistakes_made = 8
     word_guessed = False
