@@ -67,7 +67,7 @@ def build_search_index(docs):
     for w in word_1:
         for word in w:
             if word not in adict.keys():
-                adict[word] = [(i_, word.count(word))\
+                adict[word] = [(i_, word_.count(word))\
                 for i_, word_ in enumerate(word_1) if word in word_]
     return adict
 
