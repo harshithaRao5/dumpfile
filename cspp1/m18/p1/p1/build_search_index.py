@@ -109,7 +109,7 @@ def main():
         i += 1
 
     # call print to display the search index
-    print(print_search_index(build_search_index(documents)))
+    print_search_index(build_search_index(documents))
     
 if __name__ == '__main__':
     main()
