@@ -38,7 +38,7 @@ def search(search_index, query):
         make a set of doc_id and return
     '''
     input1 = query
-    input1 = input1.lower()
+    #input1 = input1.lower()
     adict = {}
     for word in input1:
         if word in search_index:
