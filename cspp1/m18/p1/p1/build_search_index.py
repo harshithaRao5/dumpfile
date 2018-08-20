@@ -17,7 +17,7 @@
         word2: [(doc_id, frequency),(doc_id, frequency),...],
         .
         .
-    }
+    }gv
 '''
 # helper function to load the stop words from a file
 import re
