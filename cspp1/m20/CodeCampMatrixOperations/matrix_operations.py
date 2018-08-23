@@ -36,7 +36,7 @@ def add_matrix(m1, m2):
         print("Error: Matrix shapes invalid for addition")
         return None
    
-def read_matrix(m1, m2):
+def read_matrix(rows_columns):
     '''
         read the matrix dimensions from input
         create a list of lists and read the numbers into it
@@ -44,35 +44,32 @@ def read_matrix(m1, m2):
         print an error message and return None
         error message should be "Error: Invalid input for the matrix"
     '''
+    matrix_1 = []
+    for _ in range(0, int(rows_columns[0])):
+        column = input().split('')
+        if len(column) == int(rows_columns[1]):
+            matrix_1.append(column)
+        else:
+            print("Error: Invalid input for the matrix")
+            return None
+    return matrix_1
 
     
 
 
 def main():
     # read matrix 1
-    rows_columns = []
-    for i in range(1):
-        rows_columns += input().split(',')
-    n_1 = int(rows_columns[0])
-    matrix_1 = []
-    for _ in range(n_1):
-        matrix_1.append(list(map(int, input().rstrip().split())))
-    #print(matrix_1)
+    rows_columns = input().split(',')
+    matrix_1 = read_matrix(rows_columns)
     # read matrix 2
-    rows_columns1 = []
-    for i in range(1):
-        rows_columns1 += input().split(',')
-    n_2 = int(rows_columns1[0])
-    matrix_2 = []
-    for _ in range(n_2):
-        matrix_2.append(list(map(int, input().rstrip().split())))
-    #print(matrix_2)
-
+    rows_columns1 = input().split(',')
+    matrix_2 = read_matrix(rows_columns1)
+    if matrix_1 != None and matrix_2 != None:
     # add matrix 1 and matrix 2
-    print(add_matrix(matrix_1, matrix_2))
+        print(add_matrix(matrix_1, matrix_2))
 
     # multiply matrix 1 and matrix 2
-    print(mult_matrix(matrix_1, matrix_2))
+        print(mult_matrix(matrix_1, matrix_2))
     
 
 if __name__ == '__main__':
