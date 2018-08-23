@@ -27,7 +27,7 @@ def add_matrix(m1, m2):
         error message should be "Error: Matrix shapes invalid for addition"
     '''
     if len(m1) == len(m2) and len(m1[0]) == len(m2[0]):
-        sum_matrix = [[0 for row in range(len(m1))] for column in range(len(m1[0]))]
+        sum_matrix = [[0 for row in range(len(m1[0]))] for column in range(len(m1))]
         for i in range(len(m1)):
             for j in range(len(m1[0])):
                 sum_matrix[i][j] = int(m1[i][j]) + int(m2[i][j])
@@ -46,7 +46,7 @@ def read_matrix(rows_columns):
     '''
     matrix_1 = []
     for _ in range(0, int(rows_columns[0])):
-        column = input().split('')
+        column = input().split()
         if len(column) == int(rows_columns[1]):
             matrix_1.append(column)
         else:
