@@ -1,5 +1,5 @@
 '''matrix operations'''
-def mult_matrix(m1, m2):
+def mult_matrix(m_1, m_2):
     '''
         check if the matrix1 columns = matrix2 rows
         mult the matrices and return the result matrix
@@ -7,17 +7,17 @@ def mult_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for mult"
     '''
-    mul_matrix = [[0 for row in range(len(m2[0]))] for column in range(len(m1))]
-    if len(m1[0]) == len(m2):
-        for i in range(len(m1)):
-            for k in range(len(m2[0])):
-                for j in range(len(m2)):
-                    mul_matrix[i][k] += int(m1[i][j]) * int(m2[j][k])
+    mul_matrix = [[0 for row in range(len(m_2[0]))] for column in range(len(m_1))]
+    if len(m_1[0]) == len(m_2):
+        for i in range(len(m_1)):
+            for k in range(len(m_2[0])):
+                for j in range(len(m_2)):
+                    mul_matrix[i][k] += int(m_1[i][j]) * int(m_2[j][k])
         return mul_matrix
     else:
         print("Error: Matrix shapes invalid for mult")
         return None
-def add_matrix(m1, m2):
+def add_matrix(m_1, m_2):
     '''
         check if the matrix shapes are similar
         add the matrices and return the result matrix
@@ -25,11 +25,11 @@ def add_matrix(m1, m2):
         and return None
         error message should be "Error: Matrix shapes invalid for addition"
     '''
-    if len(m1) == len(m2) and len(m1[0]) == len(m2[0]):
-        sum_matrix = [[0 for row in range(len(m1[0]))] for column in range(len(m1))]
-        for i in range(len(m1)):
-            for j in range(len(m1[0])):
-                sum_matrix[i][j] = int(m1[i][j]) + int(m2[i][j])
+    if len(m_1) == len(m_2) and len(m_1[0]) == len(m_2[0]):
+        sum_matrix = [[0 for row in range(len(m_1[0]))] for column in range(len(m_1))]
+        for i in range(len(m_1)):
+            for j in range(len(m_1[0])):
+                sum_matrix[i][j] = int(m_1[i][j]) + int(m_2[i][j])
         return sum_matrix
     else:
         print("Error: Matrix shapes invalid for addition")
