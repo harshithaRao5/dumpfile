@@ -50,7 +50,20 @@ def create_social_network(data):
             if res[i+1] not in data[res[0]]:
                 data[res[i]].append(data[res[i+1]])
     print(data)'''
-    
+    if data.count('\n') > 1:
+        inp_1 = data.split("\n")
+        inp_1 = inp_1[:len(inp_1)-1]
+
+        for (i, j) in enumerate(inp_1):
+            inp_1[i] = j.split(" follows ")
+           
+            if inp_1[i][0] not in adict:
+                adict[inp_1[i][0]] = inp_1[i][1].split(',')
+            else:
+                adict[inp_1[i][0]].extend(inp_1[i][1].split(','))
+        return adict
+    return adict
+
 
 
 

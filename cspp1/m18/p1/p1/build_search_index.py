@@ -40,6 +40,7 @@ def word_list(text):
     w_1 = [reg.sub("", w_1.strip()) for w_1 in text.lower().split(" ")]
     stop_words = load_stopwords("stopwords.txt")
     w_1 = [i for i in w_1 if i not in stop_words]
+    print(w_1)
     return w_1
 def build_search_index(docs):
     '''returns the count value'''
