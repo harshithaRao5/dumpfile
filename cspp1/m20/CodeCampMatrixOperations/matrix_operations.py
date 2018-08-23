@@ -48,7 +48,7 @@ def main():
         rows_columns += input().split(',')
     n_1 = int(rows_columns[0])
     matrix_1 = []
-    for _ in range(n):
+    for _ in range(n_1):
         matrix_1.append(list(map(int, input().rstrip().split()))) 
     # read matrix 2
     rows_columns1 = []
@@ -56,12 +56,14 @@ def main():
         rows_columns1 += input().split(',')
     n_2 = int(rows_columns1[0])
     matrix_2 = []
-    for _ in range(rows_columns1[n_2]):
+    for _ in range(n_2):
         matrix_2.append(list(map(int, input().rstrip().split())))
 
     # add matrix 1 and matrix 2
+    print(add_matrix(matrix_1, matrix_2))
 
     # multiply matrix 1 and matrix 2
+    print(mult_matrix(matrix_1, matrix_2))
     
 
 if __name__ == '__main__':
