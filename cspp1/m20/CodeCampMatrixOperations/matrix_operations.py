@@ -59,10 +59,12 @@ def read_matrix(rows_columns):
 
 def main():
     # read matrix 1
-    rows_columns = input().split(',')
+    num_rows_columns = input()
+    rows_columns = num_rows_columns.split(',')
     matrix_1 = read_matrix(rows_columns)
     # read matrix 2
-    rows_columns1 = input().split(',')
+    num_rows_columns = input()
+    rows_columns1 = num_rows_columns.split(',')
     matrix_2 = read_matrix(rows_columns1)
     if matrix_1 != None and matrix_2 != None:
     # add matrix 1 and matrix 2
