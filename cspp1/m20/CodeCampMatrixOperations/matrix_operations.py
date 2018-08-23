@@ -28,7 +28,6 @@ def add_matrix(m1, m2):
     '''
     if len(m1) == len(m2) and len(m1[0]) == len(m2[0]):
         sum_matrix = [[0 for row in range(len(m1[0]))] for column in range(len(m1))]
-        print(sum_matrix)
         for i in range(len(m1)):
             for j in range(len(m1[0])):
                 sum_matrix[i][j] = int(m1[i][j]) + int(m2[i][j])
