@@ -9,9 +9,9 @@ def mult_matrix(matrix_1, matrix_2):
     '''
     mul_matrix = [[0 for row in range(len(matrix_2[0]))] for column in range(len(matrix_1))]
     if len(matrix_1[0]) == len(matrix_2):
-        for i in enumerate(matrix_1):
-            for k in enumerate(matrix_2[0]):
-                for j in enumerate(matrix_2):
+        for i in range(len(matrix_1)):
+            for k in range(len(matrix_2[0])):
+                for j in range(len(matrix_2)):
                     mul_matrix[i][k] += int(matrix_1[i][j]) * int(matrix_2[j][k])
         return mul_matrix
     print("Error: Matrix shapes invalid for mult")
@@ -26,8 +26,8 @@ def add_matrix(matrix_1, matrix_2):
     '''
     if len(matrix_1) == len(matrix_2) and len(matrix_1[0]) == len(matrix_2[0]):
         sum_matrix = [[0 for row in range(len(matrix_1[0]))] for column in range(len(matrix_1))]
-        for i in enumerate(matrix_1):
-            for j in enumerate(matrix_1[0]):
+        for i in range(len(matrix_1)):
+            for j in range(len(matrix_1[0])):
                 sum_matrix[i][j] = int(matrix_1[i][j]) + int(matrix_2[i][j])
         return sum_matrix
     print("Error: Matrix shapes invalid for addition")
