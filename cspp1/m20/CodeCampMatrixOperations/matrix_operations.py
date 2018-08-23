@@ -43,20 +43,20 @@ def read_matrix(m1, m2):
 
 def main():
     # read matrix 1
-    '''rows_columns = ''
+    rows_columns = []
     for i in range(1):
-        rows_columns += int(input().split(","))'''
-    n_1 = int(input())
+        rows_columns += input().split(',')
+    n_1 = int(rows_columns[0])
     matrix_1 = []
-    for _ in range(n_1):
+    for _ in range(n):
         matrix_1.append(list(map(int, input().rstrip().split()))) 
     # read matrix 2
-    '''rows_columns1 = []
+    rows_columns1 = []
     for i in range(1):
-        rows_columns1.append(int(input().split(",")))'''
-    n_2 = int(input())
+        rows_columns1 += input().split(',')
+    n_2 = int(rows_columns1[0])
     matrix_2 = []
-    for _ in range(n_2):
+    for _ in range(rows_columns1[n_2]):
         matrix_2.append(list(map(int, input().rstrip().split())))
 
     # add matrix 1 and matrix 2
