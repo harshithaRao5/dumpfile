@@ -1,3 +1,4 @@
+'''matrix operations'''
 def mult_matrix(m1, m2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -51,6 +52,7 @@ def read_matrix(rows_columns):
             return None
     return matrix_1
 def main():
+    '''main function'''
     # read matrix 1
     num_rows_columns = input()
     rows_columns = num_rows_columns.split(',')
