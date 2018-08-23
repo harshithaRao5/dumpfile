@@ -1,4 +1,3 @@
-'''performing the matrix operations'''
 def mult_matrix(m1, m2):
     '''
         check if the matrix1 columns = matrix2 rows
@@ -14,8 +13,9 @@ def mult_matrix(m1, m2):
                 for j in range(len(m2)):
                     mul_matrix[i][k] += int(m1[i][j]) * int(m2[j][k])
         return mul_matrix
-    print("Error: Matrix shapes invalid for mult")
-    return None
+    else:
+        print("Error: Matrix shapes invalid for mult")
+        return None
 def add_matrix(m1, m2):
     '''
         check if the matrix shapes are similar
@@ -30,8 +30,9 @@ def add_matrix(m1, m2):
             for j in range(len(m1[0])):
                 sum_matrix[i][j] = int(m1[i][j]) + int(m2[i][j])
         return sum_matrix
-    print("Error: Matrix shapes invalid for addition")
-    return None
+    else:
+        print("Error: Matrix shapes invalid for addition")
+        return None
 def read_matrix(rows_columns):
     '''
         read the matrix dimensions from input
@@ -45,11 +46,11 @@ def read_matrix(rows_columns):
         column = input().split()
         if len(column) == int(rows_columns[1]):
             matrix_1.append(column)
-        print("Error: Invalid input for the matrix")
-        return None
+        else:
+            print("Error: Invalid input for the matrix")
+            return None
     return matrix_1
 def main():
-    '''main function'''
     # read matrix 1
     num_rows_columns = input()
     rows_columns = num_rows_columns.split(',')
