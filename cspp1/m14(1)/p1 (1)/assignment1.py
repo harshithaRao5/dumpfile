@@ -106,18 +106,16 @@ class Message:
         Returns: a dictionary mapping a letter (string) to
         another letter (string).
         '''
-        capital = lambda char, shift: chr((ord(char)-65 + shift)%26 +65)
-        small = lambda char, shift: chr((ord(char)-97 + shift)%26 +97)
-        for i in string.ascii_lowercase:
-            self.cipher_adict[i] = i
-        for i in string.ascii_uppercase:
-            self.cipher_adict[i] = i
-        for i in self.cipher_adict:
-            if i.islower():
-                self.cipher_adict[i] = small(i, shift)
-            elif i.isupper():
-                self.cipher_adict[i] = capital(i, shift)
-        return self.cipher_adict
+        lower_keys = list(string.ascii_lowercase)
+        lower_values = list(string.ascii_lowercase)
+        shift_lower_values = lower_values[shift:] + lower_values[:shift]
+        upper_keys = list(string.ascii_uppercase)
+        upper_values = list(string.ascii_uppercase)
+        upper_shift_values = upper_values[shift:] + upper_values[:shift]
+        full_keys = lower_keys + upper_keys
+        full_values = shift_lower_values + upper_shift_values
+        self.shift_dict = {full_keys: full_values for _ in len(full_keys)}
+        return self.shift_dict
 
     def apply_shift(self, shift):
         '''
@@ -129,13 +127,13 @@ class Message:
         Returns: the message text (string) in which every character is shifted
         down the alphabet by the input shift
         '''
-        new_text = []
+        result = []
         for letter in self.message_text:
             if letter in self.build_shift_dict(shift).keys():
-                new_text.append(self.build_shift_dict(shift)[letter])
+                result.append(self.build_shift_dict(shift)[letter])
             else:
-                new_text.append(letter)
-        return ''.join(new_text)
+                result.append(letter)
+        return ''.join(result)
 ### Paste your implementation of the Message class here
 def main():
     '''
