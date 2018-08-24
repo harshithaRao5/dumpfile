@@ -5,9 +5,6 @@ def Tic_Tac_Toe(matrix):
     for i in range(0, 3):
         if matrix[i][0] == matrix[i][1] == matrix[i][2]:
             result.append(matrix[i][0])
-    '''for row in matrix:
-        if row[0] == row[1] == row[2]:
-           result.append(row[0])'''
     for i in range(0, 3):
         if matrix[0][i] == matrix[1][i] == matrix[2][i]:
            result.append(matrix[0][i])
@@ -21,10 +18,12 @@ def Tic_Tac_Toe(matrix):
     if len(result) == 1:
         if result[0] == 'x' or result[0] == 'o':
            print(result[0])
-        print("invalid input")
+        else:
+           print("invalid input")
         return result[0]
-    print("invalid game")
-    return None
+    else:
+        print("invalid game")
+        return None
        
 def main():
     '''main function '''
