@@ -76,7 +76,7 @@ class Message:
         self.message_text (string, determined by input text)
         self.valid_words (list, determined using helper function load_words
         '''
-        self.cipher_dict = {}
+        self.cipher_adict = {}
         self.message_text = text
         self.valid_words = load_words(WORDLIST_FILENAME)
 
@@ -106,18 +106,18 @@ class Message:
         Returns: a dictionary mapping a letter (string) to
         another letter (string).
         '''
-        cap = lambda char, shift: chr((ord(char)-65 + shift)%26 +65)
+        capital = lambda char, shift: chr((ord(char)-65 + shift)%26 +65)
         small = lambda char, shift: chr((ord(char)-97 + shift)%26 +97)
         for i in string.ascii_lowercase:
-            self.cipher_dict[i] = i
+            self.cipher_adict[i] = i
         for i in string.ascii_uppercase:
-            self.cipher_dict[i] = i
-        for i in self.cipher_dict:
+            self.cipher_adict[i] = i
+        for i in self.cipher_adict:
             if i.islower():
-                self.cipher_dict[i] = small(i, shift)
+                self.cipher_adict[i] = small(i, shift)
             elif i.isupper():
-                self.cipher_dict[i] = cap(i, shift)
-        return self.cipher_dict
+                self.cipher_adict[i] = capital(i, shift)
+        return self.cipher_adict
 
     def apply_shift(self, shift):
         '''
