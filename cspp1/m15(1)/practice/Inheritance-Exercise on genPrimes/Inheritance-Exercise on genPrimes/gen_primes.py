@@ -1,21 +1,22 @@
 #define the gen_primes function here
 def genPrimes():
-	while True:
-        if is_prime(number):
-            yield number
-        	print(number)
-    
-
+    num = 2
+    prime = True
+    while True:
+        if prime == True:
+            yield num
+        num = num + 1
+        for i in range(2,num):
+            if num % i == 0:
+               prime = False
+               break
+        else:
+            prime = True
 def main():
-	datainput()
-	l=data.split()
-	a=int(l[0])
-	b=int(l[1])
-	primeGenerator = genPrimes()
-	for i in range(a):
-	    p=primeGenerator.next()
-	    if i%b == 0:
-	        print p
+	n = int(input())
+primenum = genPrimes()
+for i in range(n):
+   print(primenum.__next__())
 	
 if __name__== "__main__":
 	main()
