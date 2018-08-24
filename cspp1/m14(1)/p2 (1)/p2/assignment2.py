@@ -105,8 +105,6 @@ class Message(object):
 
         self.shift_dict = dict(zip(full_keys, full_values))
         return self.shift_dict
-
-
     def apply_shift(self, shift):
         '''
         Applies the Caesar Cipher to self.message_text with the input shift.
@@ -129,9 +127,6 @@ class Message(object):
         return ''.join(new_msg)
 
 ### Helper code End
-
-
-
 ### Paste your implementation of the `PlaintextMessage` class here
 class PlaintextMessage(Message):
     '''
@@ -159,14 +154,12 @@ class PlaintextMessage(Message):
         Message.__init__(self, text)
         self.encrypting_dict = self.build_shift_dict(self.shift)
         self.message_text_encrypted = self.apply_shift(self.shift)
-
     def get_shift(self):
         '''
         Used to safely access self.shift outside of the class
         Returns: self.shift
         '''
         return self.shift
-
     def get_encrypting_dict(self):
         '''
         Used to safely access a copy self.encrypting_dict outside of the class
@@ -192,9 +185,6 @@ class PlaintextMessage(Message):
         self.shift = shift
         self.encrypting_dict = self.build_shift_dict(self.shift)
         self.message_text_encrypted = self.apply_shift(self.shift)
-
-
-
 def main():
     ''' Function to handle testcases '''
     inp = input()
