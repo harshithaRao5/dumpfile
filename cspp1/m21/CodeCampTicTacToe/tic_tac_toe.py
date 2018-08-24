@@ -12,7 +12,7 @@ def tic_tac_toe(matrix):
         result.append(matrix[0][0])
     if matrix[2][0] == matrix[1][1] == matrix[0][2]:
         result.append(matrix[0][2])
-    if len(result) == 0:
+    if result == []:
         print('draw')
         return None
     if len(result) == 1:
