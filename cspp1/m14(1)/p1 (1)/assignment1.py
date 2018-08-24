@@ -136,10 +136,7 @@ class Message:
             else:
                 new_text.append(letter)
         return ''.join(new_text)
-
 ### Paste your implementation of the Message class here
-        
-
 def main():
     '''
         Function to handle testcases
