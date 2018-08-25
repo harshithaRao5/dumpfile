@@ -5,8 +5,8 @@ each word
 import re
 def tokenize(string):
     adict = {}
-    reg = re.compile('[^a-z]')
-    string_1 = [reg.sub("", string_1.strip()) for string_1 in string.lower().split()]
+    reg = re.compile('[^a-z A-Z 0-9]')
+    string_1 = [reg.sub("", string_1.strip()) for string_1 in string.split()]
     for word in string_1:
         adict[word] = (string_1.count(word))
     return adict
