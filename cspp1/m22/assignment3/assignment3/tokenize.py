@@ -2,10 +2,11 @@
 Write a function to tokenize a given string and return a dictionary with the frequency of
 each word
 '''
-
+import re
 def tokenize(string):
     adict = {}
-    string_1 = string.split()
+    reg = re.compile('[^a-z]')
+    string_1 = [reg.sub("", string_1.strip()) for string_1 in string.lower().split(" ")]
     for word in string_1:
         adict[word] = (string_1.count(word))
     return adict
