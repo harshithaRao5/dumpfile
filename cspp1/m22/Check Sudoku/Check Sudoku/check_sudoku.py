@@ -13,7 +13,7 @@ def check_sudoku(sudoku):
         Your solution goes here. You may add other helper functions as needed.
         The function has to return True for a valid sudoku grid and false otherwise
     '''
-    pass
+
 
 def main():
     '''
@@ -34,3 +34,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
