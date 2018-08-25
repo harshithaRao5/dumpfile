@@ -3,20 +3,14 @@ Write a python program to read multiple lines of text input and store the input 
 '''
 
 def main():
-    #list_1 = []
-    '''lines = int(input())
-    for i in range(lines):
-        input_1 = input()
-        input_1 = split('\n')'''
 
-        #list_1.append(input().split('/n'))
-    string = ''
+    input_1 = ''
     lines = int(input())
     for i in range(lines):
         i += 1
-        string += input()
-        string += '\n'
-    print(string)
+        input_1 += input()
+        input_1 += '\n'
+    print(input_1)
 
 if __name__ == '__main__':
     main()
