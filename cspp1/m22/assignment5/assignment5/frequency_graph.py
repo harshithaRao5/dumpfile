@@ -6,7 +6,7 @@ def frequency_graph(dictionary):
     '''sub function'''
     keys = sorted(dictionary.keys())
     for key in keys:
-        print(key, "-", dictionary[key+"#"])
+        print(key, "-", "#")
 
 def main():
     '''main function.'''
